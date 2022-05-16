@@ -1,0 +1,26 @@
+.nav_box{
+    width: 420px;
+    float: left;
+    margin-left: 2%;
+    height: 600px;
+    margin-top: 2%;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.457);
+}
+.greet{
+    width: 410px;
+    height: 70px;
+    margin-top: 3%;
+    margin-left: 5px;
+    box-shadow: inset 1px 1px 15px rgba(0, 0, 0, 0.167);
+}
+.hello{
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 2%;
+    margin-block-end: 2%;
+    margin-top: -5%;
+}
+.displayName{
+    font-size: 17px;
+    font-weight: 600; 
+}

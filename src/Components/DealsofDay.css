@@ -1,0 +1,26 @@
+.main_container{
+    width: 100%;
+}
+.header{
+    width: 100%;
+    height: 55px;
+}
+.heading{
+    font-size: 32px;
+    margin-left: 3%;
+    font-weight: 600;
+}
+.item_display{
+    width: 100%;
+    height: 360px;
+    margin-top: 0.5%;
+}  
+.item_card{
+    width: 232px;
+    height: 350px;
+    float: left;
+    margin-left: 1%;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.514);
+}
+
+ 

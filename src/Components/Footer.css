@@ -1,0 +1,29 @@
+.footer{
+    width: 100%;
+    background-color: hsla(240, 88%, 10%, 0.904);
+    height: 300px;
+    margin-top: 0.1%;
+    position: absolute;
+  
+}
+.list1{
+    margin-left: 11%;
+    color: white;
+    font-size: 12px;
+    padding-top: 1.5%;
+    line-height: 2.5;
+    float: left;
+    z-index: 100;
+}
+.list1>li{
+    list-style-type: none;
+    color: white;
+    
+}
+#copy{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    padding-top: 1.5%;
+}

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import "./Quick.css"
 function Quick(props) {
     return (
@@ -10,86 +11,90 @@ function Quick(props) {
                         <li className="menu">Offers</li>
                     </ul>
                 </div>
-
+        <Link to='listing/1'>
             <div className="quickdiv">
                 <img src="https://i.ibb.co/q0f0jJj/grocery.png" alt="grocery" />
                 <ul>
                     <li className="menu">Groceries</li>
                 </ul>
             </div>
+            </Link>
 
-
+            <Link to="listing/2">
             <div className="quickdiv">
                 <img src="https://i.ibb.co/W6mj0C2/mobiles.png" alt="mobiles" />
                 <ul>
                     <li className="menu">Mobiles</li>
                 </ul>
             </div>
+            </Link>
             <div id="fashions" className="quickdiv">
                 <img src="https://i.ibb.co/HGsSH6n/fashion.png" alt="fashions" />
                 <ul>
                     <li className="menu">Fashions <i className="fa fa-angle-down"></i></li>
                     <div>
                         <ul className="fashionHoverDiv list">
-                            <li id="menTop">Men's Top wear <i className="fa fa-angle-right right"></i>
+                            
+                            <li id="menTop"><Link to="listing/5">Men's Top wear</Link> <i className="fa fa-angle-right right"></i>
                                 <ul className="menTopWear list">
-                                    <li>All</li>
-                                    <li>Men's T-Shirts</li>
-                                    <li>Men's Casual-Shirts</li>
-                                    <li>Men's Formal Shirts</li>
-                                    <li>Men's Kurtas</li>
-                                    <li>Men's Ethenic Sets</li>
-                                    <li>Men's Blazers</li>
-                                    <li>Men's Raincoat</li>
-                                    <li>Men's Windcheaters</li>
-                                    <li>Men's Suit</li>
-                                    <li>Men's Fabrics</li>
+                                    <li><Link to="listing/5">All</Link></li>
+                                    <li><Link to="listing/5">Men's T-Shirts</Link></li>
+                                    <li><Link to="listing/5">Men's Casual-Shirts</Link></li>
+                                    <li><Link to="listing/5">Men's Formal Shirts</Link></li>
+                                    <li><Link to="listing/5">Men's Kurtas</Link></li>
+                                    <li><Link to="listing/5">Men's Ethenic Sets</Link></li>
+                                    <li><Link to="listing/5">Men's Blazers</Link></li>
+                                    <li><Link to="listing/5">Men's Raincoat</Link></li>
+                                    <li><Link to="listing/5">Men's Windcheaters</Link></li>
+                                    <li><Link to="listing/5">Men's Suit</Link></li>
+                                    <li><Link to="listing/5">Men's Fabrics</Link></li>
                                 </ul>
                             </li>
                             <li id="bottomMen">Men's Bottom wear <i className="fa fa-angle-right right"></i>
                                 <ul className="menBottomWear list">
-                                    <li>All</li>
-                                    <li>Men's Jeans</li>
-                                    <li>Men's Trousers</li>
-                                    <li>Men's Trackpants</li>
-                                    <li>Men's Shorts</li>
-                                    <li>Men's Cargos</li>
-                                    <li>Men's Threeourths</li>
-                                    <li>Men's Pyjamas & Loungepants</li>
-                                    <li>Men's Dhoti</li>
-                                    <li>Men's Ethenic Pyjama</li>
+                                    <li><Link to="listing/5">All</Link></li>
+                                    <li><Link to="listing/5">Men's Jeans</Link></li>
+                                    <li><Link to="listing/5">Men's Trousers</Link></li>
+                                    <li><Link to="listing/5">Men's Trackpants</Link></li>
+                                    <li><Link to="listing/5">Men's Shorts</Link></li>
+                                    <li><Link to="listing/5">Men's Cargos</Link></li>
+                                    <li><Link to="listing/5">Men's Threeourths</Link></li>
+                                    <li><Link to="listing/5">Men's Pyjamas & Loungepants</Link></li>
+                                    <li><Link to="listing/5">Men's Dhoti</Link></li>
+                                    <li><Link to="listing/5">Men's Ethenic Pyjama</Link></li>
                                 </ul>
                             </li>
-                            <li id="womenEthenic">Women Ethenic <i className="fa fa-angle-right right"></i>
+                        
+                            <li id="womenEthenic"><Link to="listing/6">Women Ethenic </Link><i className="fa fa-angle-right right"></i>
                                 <ul className="womenEthenicWear list">
-                                    <li>All</li>
-                                    <li>Women Sarees</li>
-                                    <li>Women Kurtas & kurtis</li>
-                                    <li>Women Kurta Sets</li>
-                                    <li>Ethenic Dresses</li>
-                                    <li>Women Dress Materials</li>
-                                    <li>Women Gowns</li>
-                                    <li>Women Lehenga Cholis</li>
-                                    <li>Women Leggings</li>
-                                    <li>Women Palazzos</li>
-                                    <li>Women Blouse</li>
-                                    <li>Women Dupatta</li>
+                                    <li><Link to="listing/6">All</Link></li>
+                                    <li><Link to="listing/6">Women Sarees</Link></li>
+                                    <li><Link to="listing/6">Women Kurtas & kurtis</Link></li>
+                                    <li><Link to="listing/6">Women Kurta Sets</Link></li>
+                                    <li><Link to="listing/6">Ethenic Dresses</Link></li>
+                                    <li><Link to="listing/6">Women Dress Materials</Link></li>
+                                    <li><Link to="listing/6">Women Gowns</Link></li>
+                                    <li><Link to="listing/6">Women Lehenga Cholis</Link></li>
+                                    <li><Link to="listing/6">Women Leggings</Link></li>
+                                    <li><Link to="listing/6">Women Palazzos</Link></li>
+                                    <li><Link to="listing/6">Women Blouse</Link></li>
+                                    <li><Link to="listing/6">Women Dupatta</Link></li>
                                 </ul>
                             </li>
-                            <li id="womenWestern">Women Western <i className="fa fa-angle-right right"></i>
+                            <li id="womenWestern"><Link to="listing/6">Women Western</Link> <i className="fa fa-angle-right right"></i>
                                 <ul className="womenWesternWear list">
-                                    <li>All</li>
-                                    <li>Women Tops</li>
-                                    <li>Women Dresses</li>
-                                    <li>Women T-Shirts</li>
-                                    <li>Women Jeans</li>
-                                    <li>Women Nighties</li>
-                                    <li>Women Nightsuit</li>
-                                    <li>Women Track Pants</li>
-                                    <li>Women Trouser</li>
-                                    <li>Women Jumpsuit</li>
-                                    <li>Women Shapewear</li>
-                                    <li>Women Sports Bra</li>
+                                    <li><Link to="listing/6">All</Link></li>
+                                    <li><Link to="listing/6">Women Tops</Link></li>
+                                    <li><Link to="listing/6">Women Dresses</Link></li>
+                                    <li><Link to="listing/6">Women T-Shirts</Link></li>
+                                    <li><Link to="listing/6">Women Jeans</Link></li>
+                                    <li><Link to="listing/6">Women Nighties</Link></li>
+                                    <li><Link to="listing/6">Women Nightsuit</Link></li>
+                                    <li><Link to="listing/6">Women Track Pants</Link></li>
+                                    <li><Link to="listing/6">Women Trouser</Link></li>
+                                    <li><Link to="listing/6">Women Jumpsuit</Link></li>
+                                    <li><Link to="listing/6">Women Shapewear</Link></li>
+                                    <li><Link to="listing/6">Women Sports Bra</Link></li>
                                 </ul>
                             </li>
                             <li id="menFootwear">Men Footwear <i className="fa fa-angle-right right"></i>
@@ -210,17 +215,17 @@ function Quick(props) {
                 <ul>
                     <li className="menu">Electronics <i className="fa fa-angle-down"></i></li>
                     <ul className="elecHoverDiv list">
-                        <li id="audio">Audio <i className="fa fa-angle-right right"></i>
+                        <li id="audio"><Link to="listing/8">Audio</Link> <i className="fa fa-angle-right right"></i>
                             <ul className="audio list">
-                                <li>All</li>
-                                <li>Bluetooth Headphones</li>
-                                <li>Wired Headphones</li>
-                                <li>True Wireless Earbuds</li>
-                                <li>Bluetooth Speakers</li>
-                                <li>Soundbars</li>
-                                <li>Home Theatres</li>
-                                <li>TV Streaming Device</li>
-                                <li>Remote Control</li>
+                                <li>All<Link to="listing/8"></Link></li>
+                                <li><Link to="listing/8">Bluetooth Headphones</Link></li>
+                                <li><Link to="listing/8">Wired Headphones</Link></li>
+                                <li><Link to="listing/8">True Wireless Earbuds</Link></li>
+                                <li><Link to="listing/8">Bluetooth Speakers</Link></li>
+                                <li><Link to="listing/8">Soundbars</Link></li>
+                                <li><Link to="listing/8">Home Theatres</Link></li>
+                                <li><Link to="listing/8">TV Streaming Device</Link></li>
+                                <li><Link to="listing/8">Remote Control</Link></li>
                                 <li>DTH Set Top Box</li>
                                 <li>Headphone Pouches</li>
                                 <li>Case Covers</li>
@@ -292,9 +297,9 @@ function Quick(props) {
                                 <li>Vapourizers</li>
                             </ul>
                         </li>
-                        <li id="lap-accessories">Laptop Accessories <i className="fa fa-angle-right right"></i>
+                        <li id="lap-accessories"><Link to="listing/8">Laptop Accessories</Link> <i className="fa fa-angle-right right"></i>
                             <ul className="lap-accessories list">
-                                <li>All</li>
+                                <li><Link to="listing/8">All</Link></li>
                                 <li>Mouse</li>
                                 <li>Laptop Keyboards</li>
                                 <li>Router</li>
@@ -309,14 +314,14 @@ function Quick(props) {
                                 <li>Other Accessories</li>
                             </ul>
                         </li>
-                        <li id="lap-desktop">Laptop & Desktop <i className="fa fa-angle-right right"></i>
+                        <li id="lap-desktop"><Link to="listing/9">Laptop & Desktop</Link> <i className="fa fa-angle-right right"></i>
                             <ul className="lap-desktop list">
-                                <li>All</li>
-                                <li>Laptops</li>
-                                <li>Gaming Laptops</li>
-                                <li>Desktop PCs</li>
-                                <li>All In One PCs</li>
-                                <li>Mini PCs</li>
+                                <li><Link to="listing/9">All</Link></li>
+                                <li><Link to="listing/9">Laptops</Link></li>
+                                <li><Link to="listing/9">Gaming Laptops</Link></li>
+                                <li><Link to="listing/9">Desktop PCs</Link></li>
+                                <li><Link to="listing/9">All In One PCs</Link></li>
+                                <li><Link to="listing/9">Mini PCs</Link></li>
                                 <li>Tower PCs</li>
                                 <li>PC Finder</li>
                                 <li>GST Invoice on Laptops</li>
@@ -522,10 +527,10 @@ function Quick(props) {
                 <ul>
                     <li className="menu">Appliances<i className="fa fa-angle-down"></i></li>
                     <ul className="applianceHoverDiv list">
-                        <li>Televisions</li>
+                        <li><Link to="listing/10">Televisions</Link></li>
                         <li>Washing Machines</li>
-                        <li>Air Conditioners</li>
-                        <li>Refrigerators</li>
+                        <li><Link to="listing/3">Air Conditioners</Link></li>
+                        <li><Link to="listing/11">Refrigerators</Link></li>
                         <li>Kitchen Appliances</li>
                         <li>Home Appliances</li>
                         <li>Seasonal Appliances</li>
@@ -547,7 +552,7 @@ function Quick(props) {
                         <ul>
                             <li style={{marginLeft: "-15%"}} className="menu">Beauty,Toys & more <i className="fa fa-angle-down"></i></li>
                             <ul className="toysHoverDiv list">
-                                <li>Beauty & Personal Care</li>
+                                <li><Link to='listing/4'>Beauty & Personal Care</Link></li>
                                 <li>Men's Grooming</li>
                                 <li>Food & Drinks</li>
                                 <li>Nutrition & Health Care</li>

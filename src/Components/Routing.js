@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import AddressInfo from '../Account/AddressInfo';
 import Profileinfo from '../Account/Profileinfo';
+import Listing from './Listing';
 
 function Routing(props) {
     return (
@@ -14,6 +15,8 @@ function Routing(props) {
             <Routes>   
                         <Route path="/" element={<Home />} />
                         <Route path="profile" element={<Profile />} />
+                        <Route path="listing" element={<Listing />} />
+                        <Route path="listing/:id" element={<Listing />} />
                         {/* <Route path='profile/profileInfo' element={<Profileinfo />} />
                         <Route path="profile/address" element={<AddressInfo />} />   */}
             </Routes>

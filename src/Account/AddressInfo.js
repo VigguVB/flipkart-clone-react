@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AddressInfo.css';
 import ViewButton from '../Components/ViewButton';
 import AddedAddress from './AddedAddress';
@@ -15,7 +15,9 @@ function AddressInfo(props) {
 
     const [showAddForm, setShowAddForm] = useState(false)
     const [storeAddress, setStoreAddress] = useState({})
-    const [displaySavedAddress, setDisplaySavedAddress] = useState(false)
+    // const [displaySavedAddress, setDisplaySavedAddress] = useState(false)
+    const[loadAddress, setLoadAddress]=useState([])
+    const[addedmsg, setAddedmsg] = useState(false)
     function showForm() {
         setShowAddForm(true)
     }
@@ -34,9 +36,46 @@ function AddressInfo(props) {
             state1: enteredState,
             placetype: enteredPlaceType
         }
-
+        
         )
-        setDisplaySavedAddress(true)
+        // {
+
+        //     method: "POST", body:JSON.stringify(
+
+        //       { id: Math.random(),
+        //         file: data.value}
+        //     ),
+        //     headers: {
+        //         "content-type": "application/json"
+        //     }
+        // })
+        fetch("https://flipkart-api.herokuapp.com/addAddress",{method: "POST", body:JSON.stringify(
+            {
+                id:Math.random(),
+                name: storeAddress.name,
+                mobile_number: storeAddress.mobile,
+                pincode: storeAddress.pincode,
+                locality: storeAddress.locality,
+                address: storeAddress.address,
+                city: storeAddress.city,
+                state_: storeAddress.state1,
+                placetype: storeAddress.placetype
+            }
+        ),
+        headers: {
+            "content-type": "application/json"
+        }
+    }).then(function(response){
+        if(response.status===200){
+           setAddedmsg(true) 
+        }
+        return response.json()
+        
+    }).then(function(data){
+        console.log(data)
+    })
+        
+        // setDisplaySavedAddress(true)
     }
 
     function firstNameHandler(e) {
@@ -64,7 +103,16 @@ function AddressInfo(props) {
         setenteredPlaceType(e.target.value)
     }
 
-
+    useEffect(()=>{
+        fetch("https://flipkart-api.herokuapp.com/address")
+        .then(res=>res.json())
+        .then((data)=>{
+            console.log(data)
+            setLoadAddress([...loadAddress, data])
+            console.log(loadAddress)
+            console.log("useeffect running")
+        })
+    },[storeAddress])
 
     return (
         <div className='info_div1'>
@@ -99,8 +147,11 @@ function AddressInfo(props) {
                 <div className='cancelbtns'>
                     {showAddForm && <button onClick={cancelForm} className='cancel'>CANCEL</button>}
                 </div>
+                <div>
+                    {addedmsg && <h2>Address Saved Succesfully</h2>}
+                </div>
                 <div className='reflectAddress'>
-                    {displaySavedAddress && <AddedAddress onsave={storeAddress} />}
+                     <AddedAddress adressloader={loadAddress} />
                 </div>
             </div>
 

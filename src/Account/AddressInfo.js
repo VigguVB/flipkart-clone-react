@@ -12,7 +12,6 @@ function AddressInfo(props) {
     const [enteredCity, setEnteredCity] = useState("")
     const [enteredState, setEnteredstate] = useState("")
     const [enteredPlaceType, setenteredPlaceType] = useState("")
-
     const [showAddForm, setShowAddForm] = useState(false)
     const [storeAddress, setStoreAddress] = useState({})
     // const [displaySavedAddress, setDisplaySavedAddress] = useState(false)
@@ -24,9 +23,10 @@ function AddressInfo(props) {
     function cancelForm() {
         setShowAddForm(false)
     }
-    function storeData() {
-        setStoreAddress({
-            ...storeAddress,
+    
+    
+    function newstore(){
+        let formdata = {
             name: enteredFirstName,
             mobile: enteredMobile,
             pincode: enteredPincode,
@@ -36,46 +36,30 @@ function AddressInfo(props) {
             state1: enteredState,
             placetype: enteredPlaceType
         }
-        
-        )
-        // {
-
-        //     method: "POST", body:JSON.stringify(
-
-        //       { id: Math.random(),
-        //         file: data.value}
-        //     ),
-        //     headers: {
-        //         "content-type": "application/json"
-        //     }
-        // })
-        fetch("https://flipkart-api.herokuapp.com/addAddress",{method: "POST", body:JSON.stringify(
-            {
-                id:Math.random(),
-                name: storeAddress.name,
-                mobile_number: storeAddress.mobile,
-                pincode: storeAddress.pincode,
-                locality: storeAddress.locality,
-                address: storeAddress.address,
-                city: storeAddress.city,
-                state_: storeAddress.state1,
-                placetype: storeAddress.placetype
+        console.log(formdata)
+        fetch("https://flipkart-api.herokuapp.com/addAddress",{method: "POST", body:JSON.stringify(formdata),
+            headers: {
+                "content-type": "application/json"
             }
-        ),
-        headers: {
-            "content-type": "application/json"
+        }).then(res=>{res.json();
+        if(res.status===200){
+            setAddedmsg(true)
+            setEnteredFirstName("")
+            setEnteredMobile("")
+            setEnteredAddress("")
+            setEnteredLocality("")
+            setEnteredPincode("")
+            setEnteredstate("")
+            setEnteredCity("")
+            setenteredPlaceType("")
         }
-    }).then(function(response){
-        if(response.status===200){
-           setAddedmsg(true) 
-        }
-        return response.json()
-        
-    }).then(function(data){
-        console.log(data)
-    })
-        
-        // setDisplaySavedAddress(true)
+        }).then((data)=>{
+            setStoreAddress(formdata);
+            setTimeout(()=>{
+                setShowAddForm(false)
+                setAddedmsg(false)
+            },1500)
+        })
     }
 
     function firstNameHandler(e) {
@@ -108,7 +92,7 @@ function AddressInfo(props) {
         .then(res=>res.json())
         .then((data)=>{
             console.log(data)
-            setLoadAddress([...loadAddress, data])
+            setLoadAddress(data)
             console.log(loadAddress)
             console.log("useeffect running")
         })
@@ -142,13 +126,13 @@ function AddressInfo(props) {
 
                 </form>}
                 <div className='btns'>
-                    {showAddForm && <ViewButton onClick={storeData} name="SAVE" />}
+                    {showAddForm && <ViewButton onClick={newstore}  name="SAVE" />}
                 </div>
                 <div className='cancelbtns'>
                     {showAddForm && <button onClick={cancelForm} className='cancel'>CANCEL</button>}
                 </div>
                 <div>
-                    {addedmsg && <h2>Address Saved Succesfully</h2>}
+                      {addedmsg && <p style={{marginLeft:"-5%",marginTop:"0.2%",color:"green", fontWeight:"600", fontSize:"20px"}}>Address Saved Succesfully</p>}
                 </div>
                 <div className='reflectAddress'>
                      <AddedAddress adressloader={loadAddress} />

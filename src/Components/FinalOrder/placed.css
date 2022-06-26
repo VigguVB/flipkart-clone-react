@@ -1,0 +1,27 @@
+#placeddiv{
+    width: 100%;
+    height: 540px;
+    margin: auto;
+    background-image: url("https://i.ibb.co/PjMSj0R/16295-flipkartforever3.gif");
+}
+.placedhead{
+    font-size: 70px;
+    color: rgb(13, 224, 13);
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 35%;
+    /* animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite; */
+    animation: blink 0.3s infinite;
+}
+@keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

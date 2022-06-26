@@ -15,17 +15,18 @@ function AddressInfo(props) {
     const [showAddForm, setShowAddForm] = useState(false)
     const [storeAddress, setStoreAddress] = useState({})
     // const [displaySavedAddress, setDisplaySavedAddress] = useState(false)
-    const[loadAddress, setLoadAddress]=useState([])
-    const[addedmsg, setAddedmsg] = useState(false)
+    const [loadAddress, setLoadAddress] = useState([])
+    const [addedmsg, setAddedmsg] = useState(false)
     function showForm() {
         setShowAddForm(true)
     }
     function cancelForm() {
         setShowAddForm(false)
     }
-    
-    
-    function newstore(){
+
+
+    function newstore() {
+        let email = sessionStorage.getItem("userInfo").split(",")[1]
         let formdata = {
             name: enteredFirstName,
             mobile: enteredMobile,
@@ -34,31 +35,34 @@ function AddressInfo(props) {
             address: enteredAddress,
             city: enteredCity,
             state1: enteredState,
-            placetype: enteredPlaceType
+            placetype: enteredPlaceType,
+            email: email
         }
         console.log(formdata)
-        fetch("https://flipkart-api.herokuapp.com/addAddress",{method: "POST", body:JSON.stringify(formdata),
+        fetch("https://flipkart-api.herokuapp.com/addAddress", {
+            method: "POST", body: JSON.stringify(formdata),
             headers: {
                 "content-type": "application/json"
             }
-        }).then(res=>{res.json();
-        if(res.status===200){
-            setAddedmsg(true)
-            setEnteredFirstName("")
-            setEnteredMobile("")
-            setEnteredAddress("")
-            setEnteredLocality("")
-            setEnteredPincode("")
-            setEnteredstate("")
-            setEnteredCity("")
-            setenteredPlaceType("")
-        }
-        }).then((data)=>{
+        }).then(res => {
+            res.json();
+            if (res.status === 200) {
+                setAddedmsg(true)
+                setEnteredFirstName("")
+                setEnteredMobile("")
+                setEnteredAddress("")
+                setEnteredLocality("")
+                setEnteredPincode("")
+                setEnteredstate("")
+                setEnteredCity("")
+                setenteredPlaceType("")
+            }
+        }).then((data) => {
             setStoreAddress(formdata);
-            setTimeout(()=>{
+            setTimeout(() => {
                 setShowAddForm(false)
                 setAddedmsg(false)
-            },1500)
+            }, 1500)
         })
     }
 
@@ -87,16 +91,17 @@ function AddressInfo(props) {
         setenteredPlaceType(e.target.value)
     }
 
-    useEffect(()=>{
-        fetch("https://flipkart-api.herokuapp.com/address")
-        .then(res=>res.json())
-        .then((data)=>{
-            console.log(data)
-            setLoadAddress(data)
-            console.log(loadAddress)
-            console.log("useeffect running")
-        })
-    },[storeAddress])
+    useEffect(() => {
+        let email = sessionStorage.getItem("userInfo").split(',')[1]
+        fetch(`https://flipkart-api.herokuapp.com/address?email=${email}`)
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data)
+                setLoadAddress(data)
+                console.log(loadAddress)
+                console.log("useeffect running")
+            })
+    }, [storeAddress])
 
     return (
         <div className='info_div1'>
@@ -126,16 +131,16 @@ function AddressInfo(props) {
 
                 </form>}
                 <div className='btns'>
-                    {showAddForm && <ViewButton onClick={newstore}  name="SAVE" />}
+                    {showAddForm && <ViewButton onClick={newstore} name="SAVE" />}
                 </div>
                 <div className='cancelbtns'>
                     {showAddForm && <button onClick={cancelForm} className='cancel'>CANCEL</button>}
                 </div>
                 <div>
-                      {addedmsg && <p style={{marginLeft:"-5%",marginTop:"0.2%",color:"green", fontWeight:"600", fontSize:"20px"}}>Address Saved Succesfully</p>}
+                    {addedmsg && <p style={{ marginLeft: "-5%", marginTop: "0.2%", color: "green", fontWeight: "600", fontSize: "20px" }}>Address Saved Succesfully</p>}
                 </div>
                 <div className='reflectAddress'>
-                     <AddedAddress adressloader={loadAddress} />
+                    <AddedAddress adressloader={loadAddress} />
                 </div>
             </div>
 

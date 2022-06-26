@@ -15,6 +15,11 @@ li:hover{
     list-style-type: none;
     text-decoration: none;
 }
+#loginName{
+    background-color: #2874f0;
+    color: white;
+    border: none;
+}
 #name{
     color: white;
     font-size: 24px;
@@ -50,7 +55,7 @@ li:hover{
 #account{
     margin-top: -2.7%;
     height: 42px;
-    margin-left: 60% ;
+    margin-left: 62% ;
     float: left;
     color: white;
     font-size: 17px;

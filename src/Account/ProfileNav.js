@@ -16,11 +16,6 @@ function ProfileNav(props) {
 
                 <NavigationButton onClick={props.onselecting1} name="Profile Information" />
                 <NavigationButton onClick={props.onselecting2} name="Address Information" />
-                <NavigationButton name="View Orders" />
-                <NavigationButton name="My Chats" />
-                <NavigationButton name="My Wishlist" />
-                <NavigationButton name="Saved Cards" />
-                <NavigationButton name="Logout" />
             </div>
 
         </div>

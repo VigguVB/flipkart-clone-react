@@ -4,42 +4,45 @@ import './Profile.css'
 import Profileinfo from './Profileinfo';
 import ProfileNav from './ProfileNav';
 import AddressInfo from './AddressInfo';
+import Header from '../Components/Header';
 
 function Profile(props) {
-    const[showPersonal, setShowPersonal]=useState(false)
-    const[showAddress, setShowAddress]=useState(false)
+    const [showPersonal, setShowPersonal] = useState(false)
+    const [showAddress, setShowAddress] = useState(false)
+    const [background, setBackground] = useState(false)
 
-    const loadHandler = ()=>{
+
+    const loadHandler = () => {
         setShowPersonal(true)
     }
 
 
-    const selectPersonal = () =>{
+    const selectPersonal = () => {
         setShowPersonal(true)
         setShowAddress(false)
-        console.log("Hoo==")
+
     }
-    const selectAddress = () =>{
+    const selectAddress = () => {
         setShowAddress(true)
         setShowPersonal(false)
     }
-    
+
+    function backgroundHandler() {
+        setBackground(true)
+    }
 
 
     return (
-        <div onLoad={loadHandler} className='profilediv'>
-              <ProfileNav onselecting1={selectPersonal} onselecting2={selectAddress} />
-         
-                {/* <Routes>
-                    <Route path="/" element={<Profileinfo />} />
-                     <Route exact path="profileInfo" element={<Profileinfo />} />
-                    <Route exact path="address" element={<AddressInfo />} /> 
-                </Routes> */}
+        <>
+            <Header />
+            <div onLoad={loadHandler} className='profilediv'>
+                <ProfileNav onselecting1={selectPersonal} onselecting2={selectAddress} />
                 {showPersonal && <Profileinfo />}
                 {showAddress && <AddressInfo />}
-      
-               
-        </div>
+
+
+            </div>
+        </>
 
     );
 }

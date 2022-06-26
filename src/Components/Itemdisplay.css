@@ -1,20 +1,26 @@
 .itembox{
-    width: 445px;
-    height: 680px;
+    width: 320px;
+    height: 520px;
     margin: 1.5%;
     box-shadow: 0.5px 0.5px 12px rgba(0, 0, 0, 0.319);
     float: left;
+    border-radius: 6px;
 }
 .itembox:hover{
-    box-shadow: 0.5px 0.5px 12px rgba(53, 53, 244, 0.319);
+    box-shadow: 1px 1px 12px hsla(240, 89%, 52%, 0.886);
+    transform: scaleX(1.1);
+    transform: scaleY(1.02);
+    transition: 0.8;
 
 }
 .imgdiv{
-    width: 100%;
-    height: 400px;
+    margin-left: 5%;
+    width: 90%;
+    height: 300px;
 }
 .itemname{
     text-align: center;
+    font-size: 18px;
 }
 .qty{
     text-align: center;

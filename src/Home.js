@@ -6,18 +6,16 @@ import Header from "./Components/Header";
 import Quick from "./Components/Quick";
 import Slider from "./Components/Slider";
 import Profile from "./Account/Profile";
+import Login from "./Login/Login";
 
 const Home = () => {
+    
     return (
-        <Fragment>
-        
-                
+        <Fragment>  
+                <Header />
                 <Quick />
                 <Slider />
                 <DealsofDay />
-               
-     
-   
         </Fragment>
     )
 }

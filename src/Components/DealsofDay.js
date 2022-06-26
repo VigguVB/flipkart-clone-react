@@ -63,10 +63,10 @@ function DealsofDay(props) {
                                 <span style={{ fontSize: "17px", fontWeight: "600" }}>{item.name}</span>
                             </div>
                             <div style={{ textAlign: "center", marginTop: "6%" }}>
-                                <span style={{ fontSize: "17px", fontWeight: "600",color:"green" }}>{item.offer}</span>
+                                <span style={{ fontSize: "17px", fontWeight: "600", color: "green" }}>{item.offer}</span>
                             </div>
                             <div style={{ textAlign: "center", marginTop: "6%" }}>
-                                <span style={{ fontSize: "17px", fontWeight: "600",color:"gray" }}>{item.description}</span>
+                                <span style={{ fontSize: "17px", fontWeight: "600", color: "gray" }}>{item.description}</span>
                             </div>
                         </div>
                     )

@@ -13,13 +13,11 @@ import FinalOrder from './FinalOrder/FinalOrder';
 import OrderPlaced from './FinalOrder/OrderPlaced';
 import Register from '../Login/Register';
 import ViewOrders from '../Account/ViewOrders';
+import Search from './Search/Search';
 
 function Routing(props) {
     return (
-
         <div>
-
-
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="profile" element={<Profile />} />
@@ -33,9 +31,8 @@ function Routing(props) {
                 <Route path="final" element={<FinalOrder />} />
                 <Route path="Orderplaced" element={<OrderPlaced />} />
                 <Route path="myorders" element={<ViewOrders />} />
+                <Route path="search" element={<Search />} />
 
-                {/* <Route path='profile/profileInfo' element={<Profileinfo />} />
-                        <Route path="profile/address" element={<AddressInfo />} />   */}
             </Routes>
             <Footer />
         </div>

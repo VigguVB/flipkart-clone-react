@@ -1,0 +1,91 @@
+.itembox{
+    width: 320px;
+    height: 520px;
+    margin: 1.5%;
+    box-shadow: 0.5px 0.5px 12px rgba(0, 0, 0, 0.319);
+    float: left;
+    border-radius: 6px;
+}
+.itembox:hover{
+    box-shadow: 1px 1px 12px hsla(240, 89%, 52%, 0.886);
+    transform: scaleX(1.1);
+    transform: scaleY(1.02);
+    transition: 0.8;
+
+}
+.imgdiv{
+    margin-left: 5%;
+    width: 90%;
+    height: 300px;
+}
+.itemname{
+    text-align: center;
+    font-size: 18px;
+}
+.qty{
+    text-align: center;
+    color: brown;
+    font-family: Hack;
+    font-weight: 600;
+}
+.newprice{
+    margin-left: 15%;
+    float: left;
+    font-weight: 700;
+}
+.oldprice{
+    color: rgba(128, 128, 128, 0.696);
+    margin-left: 7%;
+    float: left
+}
+.offer{
+    color: hwb(120 5% 34%);
+    margin-left: 7%;
+    float: left 
+}
+.availability{
+    color: hwb(120 5% 34%);
+    font-weight: 600;
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 4%;
+    
+}
+.divv{
+    width: 445px;
+    height: 50px;
+    position: absolute;
+    margin-top: 9.5%;
+}
+.addtowish{
+    float: left;
+    width: 222px;
+    height: 50px;
+    border: none;
+    color: white;
+    background-color: hsl(28, 80%, 50%);
+    font-size: 16px;
+    font-weight: 600;
+    font-size: 20px;
+}
+.addtowish:hover{
+    color: hsl(28, 80%, 50%);
+    background-color: white;
+    border: 2px groove hsl(28, 80%, 50%);
+}
+.addtocart{
+    float: left;
+    width: 223px;
+    height: 50px;
+    border: none;
+    color: white;
+    background-color: orangered;
+    font-size: 16px;
+    font-weight: 600;
+    font-size: 20px;
+}
+.addtocart:hover{
+    color: orangered;
+    background-color: white;
+    border: 2px groove #f54708;
+}

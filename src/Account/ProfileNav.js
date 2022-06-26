@@ -5,12 +5,13 @@ import './ProfileNav.css';
 
 
 function ProfileNav(props) {
+    let name = sessionStorage.getItem("userInfo").split(",")[0]
     return (
         <div className='nav_box'>
             <div className='greet'>
                 <img src='https://i.ibb.co/V2Dr3NH/Profile-icon-Graphic.png' style={{ width: "65px", height: "65px" }} />
-                <span className='hello'>Hello,</span>
-                <span className='displayName'></span>
+                <span className='hello'>Hello, </span>
+                <span className='displayName'>{name}</span>
             </div>
             <div style={{ marginTop: "5%" }}>
 

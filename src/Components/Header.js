@@ -12,6 +12,7 @@ function Header(props) {
     const [count, setCount] = useState(0)
 
     const [userData, setUserData] = useState('')
+    const [keyword, setKeyword] = useState("")
 
     function loginHandler() {
         navigate("login")
@@ -76,6 +77,15 @@ function Header(props) {
             })
 
     }, [])
+
+    function inputHandler(e){
+        setKeyword(e.target.value)
+        sessionStorage.setItem("keyword", e.target.value)   
+    }
+    function search(){
+        navigate('/search')
+    }
+
     return (
         <div className='headerdiv'>
             <div id="name">
@@ -85,8 +95,8 @@ function Header(props) {
                 <i>Explore Plus</i>
             </div>
             <div id="searchdiv">
-                <input id="searchbar" placeholder="Search for products, brands and more" />
-                <i className="fa fa-search checked"></i>
+                <input id="searchbar" placeholder="Search for products name" onChange={inputHandler} value={keyword} />
+                <i onClick={search} className="fa fa-search checked"></i>
             </div>
             <div id="account">
                 {conditionalHeader()}
